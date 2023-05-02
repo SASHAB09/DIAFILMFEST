@@ -43,9 +43,9 @@
     position:fixed;
     right:0;
     bottom:0;
-    min-width: 100%;
-    min-height: 100%;
     z-index: -1;
+    min-height: 100%;
+    min-width: 100%;
   }
   .btn-custom{
     font-family: 'Poppins', sans-serif;
@@ -65,8 +65,9 @@
     font-size:30px;
   }
 
-  section.sponsors{
-
+  .cd{
+    font-size:30px;
+    font-family: 'Poppins', sans-serif;
   }
 
   @media only screen and (max-width: 768px) {
@@ -109,27 +110,48 @@
   <br>
   <img src="dia_filmfest_icons_uncut-removebg-preview.png" alt="" width="250px">
   <br>
+  <p id="demo" class="text-white cd"></p>
   <br>
   <button class="btn btn-custom">Sign up now!</button>
-    <br>
-    <br>
-<!--   <br>
+  <br>
   <br>
   <br>
 
-  <section class="bg-white w-100 sponsors p-4">
-    <img style="margin-left: 3%;" src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/ce/Blackmagic_Design_Logo.svg/1280px-Blackmagic_Design_Logo.svg.png" width="150px" alt="">
 
-    <img style="margin-left: 3%;"  src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Canon_logo_vector.png" alt="" width="100px">
-
-    <img style="margin-left: 3%;" src="https://www.ignitecreativeacademy.com/wp-content/uploads/2022/07/cropped-Ignite-Creative-Academy-FAV-1.png" width="50px" height="50px" alt="">
-
-</section> -->
 </div>
 
 
 
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("May 22, 2023 0:0:0").getTime();
 
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
 
 
