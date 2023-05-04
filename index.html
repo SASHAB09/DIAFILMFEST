@@ -19,8 +19,59 @@
 </head>
 <style>
 
+  .popup{
+    background-color: #ffffffe8;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none; 
+    text-align: center;
+    z-index: 10;
+}
+.popup button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff7f;
+		background: #03549a;
+		border-radius: 100%;
+		width: 40px;
+		height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup h2{
+	margin-top: -20px;
+}
+.popup p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+.popuplink{
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0f72e5;
+		border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 0;
+}
+
   .navbar{
     font-size:20px;
+    backdrop-filter: brightness(50%);
   }
 
   .poppins{
@@ -32,13 +83,14 @@
   }
   .content{
     text-align: center;
-    margin-top: 10%;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(50%);
   } 
   .content h1{
     font-size:55px;
-    color: white;
+    color: rgb(255, 255, 255);
   }
 
   .back-video{
@@ -76,9 +128,16 @@
     font-family: 'Inter', sans-serif;
   }
 
+  .bg-img{
+    background-image: url('https://cdn.thecoolist.com/wp-content/uploads/2016/04/Pentacon-Six-TL-vintage-camera.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+  }
+
   @media only screen and (max-width: 768px) {
     .content{
-      margin-top: 20%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -86,15 +145,60 @@
       text-align: center;
     }
 
+    .info-vid{
+      width: 560px;
+      height: 315px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .info-vid{
+      width: 560px;
+      height: 315px;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+.info-vid{
+  width: 360px;
+  height: 215px;
+}
+
+
+}
+
+.asdasd{
+      backdrop-filter: brightness(50%);
+    }
+
+.gradient-bg{
+  background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
 }
 
 </style>
-<body>
+<body class="">
 
-  <video autoplay loop muted plays-inline class="back-video">
+  <!-- <video autoplay loop muted plays-inline class="back-video">
     <source src="pexels-tima-miroshnichenko-7988642-4096x2160-25fps.mp4"> 
-  </video>
+  </video> -->
 
+  <div class="popup">
+    <button id="close">&times;</button>
+    <h2>It's Coming Soon!!</h2>
+    <p>
+      The DIA Film Festival is coming soon, sign up now and upload your work to get a chance to win awesome prizes and more!
+    </p>
+    <a class="popuplink" href="how_to_submit.html">Sign up Now</a>
+  </div>
+
+  <div class="bg-img">
   <nav class="navbar navbar-dark navbar-expand-lg bg-trans">
     <div class="container-fluid">
       <div class="navbar-brand">
@@ -117,38 +221,79 @@
   
   </nav>
 
+  <div class="p-5 asdasd"> </div>
+
 <div class="d-flex content">
 
-  <div class="d-flex flex-column">
+
     <h1> <span class="maintextfont">DIA</span> <span class="maintextfont">Filmfest</span> </h1>
     <br>
-    <section style="width: 350px;" class="sponsors bg-white p-3 d-flex justify-content-evenly rounded">
+
+
+
+
+    <img src="dia_filmfest_icons_uncut-removebg-preview.png" alt="" width="280px">
+
+    <!-- <section style="width: 350px;" class="sponsors bg-white p-3 d-flex justify-content-evenly rounded">
       <img src="https://www.pngkey.com/png/full/124-1246301_blackmagic-design-logo-blackmagic-design-logo-transparent.png" width="160px" height=""alt="">
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Canon_logo_vector.png" width="75px"  alt="">
       <img src="https://www.ignitecreativeacademy.com/wp-content/uploads/2022/07/cropped-Ignite-Creative-Academy-FAV-1.png"  width="50px" alt="">
-    </section>
-  </div>
+    </section> -->
 
-  <div class="d-flex flex-column">
-    <img src="dia_filmfest_icons_uncut-removebg-preview.png" alt="" width="280px">
-    <br>
     <p id="demo" class="text-white cd"></p>
-    <br>
+
     <button style="width: 300px" class="btn btn-custom">Sign up now!</button>
     <br>
     <br>
-  </div>
+
   
 
   <br>
 
+
+
+</div>
 </div>
 
+<br>
+<br>
+
+<div class="d-flex justify-content-center">
+
+<iframe class="info-vid rounded" width="1120" height="630" src="https://www.youtube.com/embed/fRWt8_FcfH4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</div>
+<br>
+<br>
+<br>
+<br>
 
 
 
 
 <script>
+    window.addEventListener("load", function(){
+      setTimeout(
+        function open(event){
+          document.querySelector(".popup").style.
+          display = "block";
+        },
+        1000
+      )
+    });
+
+
+    /*document.querySelector("#close").addEventListener
+    ("click", function(){});*/
+    window.addEventListener("load", function(){
+      setTimeout(
+        function close(event){
+          document.querySelector(".popup").style.display = "none";
+        },
+        10000
+      )
+    });
+
 // Set the date we're counting down to
 var countDownDate = new Date("May 22, 2023 0:0:0").getTime();
 
